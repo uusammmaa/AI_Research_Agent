@@ -8,6 +8,11 @@ class Settings(BaseSettings):
     tavily_api_key: str
     model: str = "claude-sonnet-4-20250514"
     max_iterations: int = 10
+    cors_origins: str = "http://localhost:3000"
 
 
 settings = Settings()
+
+
+def get_cors_origins() -> list[str]:
+    return [origin.strip() for origin in settings.cors_origins.split(",") if origin.strip()]

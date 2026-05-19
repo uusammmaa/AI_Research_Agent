@@ -1,5 +1,6 @@
 # backend/agent/orchestrator.py
 import json
+import re
 import anthropic
 from typing import AsyncIterator
 from agent.tools import TOOL_SCHEMAS, execute_tool
@@ -17,9 +18,30 @@ def stream_step(step: AgentStep) -> str:
 
 def _extract_json(text: str) -> str:
     text = text.strip()
-    if text.startswith("```"):
-        lines = text.split("\n")
-        return "\n".join(lines[1:-1] if lines[-1].strip() == "```" else lines[1:])
+    if not text:
+        raise ValueError("Empty response")
+
+    fence_match = re.search(
+        r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL | re.IGNORECASE
+    )
+    if fence_match:
+        candidate = fence_match.group(1).strip()
+        if candidate:
+            return candidate
+
+    start = 0
+    while True:
+        idx = text.find("{", start)
+        if idx == -1:
+            break
+        try:
+            obj, _ = json.JSONDecoder().raw_decode(text, idx)
+            if isinstance(obj, dict):
+                return json.dumps(obj)
+        except json.JSONDecodeError:
+            pass
+        start = idx + 1
+
     return text
 
 
