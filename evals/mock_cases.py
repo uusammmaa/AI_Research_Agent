@@ -21,6 +21,7 @@ from evals.fakes import (
     make_execute_tool_stub,
     VALID_BRIEF,
 )
+from evals.scoring import is_valid_research_brief
 
 
 async def _collect_steps(job_url: str) -> list[dict]:
@@ -62,20 +63,10 @@ def _score_success_case(steps: dict, name: str) -> dict:
     checks["completed"] = len(complete_steps) == 1 and len(error_steps) == 0
 
     valid_schema = False
-    brief = None
     if complete_steps:
         try:
             brief = json.loads(complete_steps[0]["output"])
-            required = {
-                "role", "company", "location", "tech_stack", "key_requirements",
-                "company_summary", "culture_signals", "talking_points", "red_flags", "sources",
-            }
-            valid_schema = (
-                required.issubset(brief.keys())
-                and isinstance(brief["tech_stack"], list)
-                and isinstance(brief["sources"], list)
-                and bool(brief["role"]) and bool(brief["company"])
-            )
+            valid_schema = is_valid_research_brief(brief)
         except Exception:
             valid_schema = False
     checks["valid_schema"] = valid_schema

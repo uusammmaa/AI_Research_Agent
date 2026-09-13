@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13T17:40:34.498267+00:00",
+  "generated_at": "2026-09-13T18:18:35.662108+00:00",
   "mock_suite": {
     "summary": {
       "total": 8,
@@ -114,62 +114,61 @@
           "within_iteration_budget": true,
           "latency_ok": true
         },
-        "steps": 13,
-        "tool_call_count": 6,
-        "elapsed_seconds": 41.4,
+        "steps": 9,
+        "tool_call_count": 4,
+        "iteration_count": 3,
+        "elapsed_seconds": 33.4,
         "error_message": null,
         "brief": {
-          "role": "Software Engineer (New Grad) \u2014 k0rdent AI Platform",
+          "role": "Remote Software Engineer",
           "company": "Mirantis",
-          "location": "Remote (must be authorized to work in the United States)",
+          "location": "Remote - Worldwide (US-based listing noted in some postings, e.g. Raleigh, NC)",
           "tech_stack": [
-            "Go (Golang)",
+            "Go",
+            "SQL",
+            "Git",
+            "Linux",
+            "Python",
+            "TypeScript",
             "Kubernetes",
-            "REST APIs",
-            "SQL/relational databases",
-            "Git/Linux",
-            "CI/CD (GitHub Actions)",
-            "Docker/Helm/kubectl",
-            "AWS/Azure/GCP (nice to have)",
-            "Python/TypeScript (for tooling/testing)"
+            "REST/gRPC APIs",
+            "distributed systems tooling"
           ],
           "key_requirements": [
-            "Bachelor's degree in CS/Software Engineering or equivalent demonstrated ability",
-            "Solid CS fundamentals: data structures, algorithms, concurrency, networking, HTTP/databases",
-            "Proficiency in at least one systems/backend language (Go, Java, C++, Rust, C#, Python) with ability to ramp up in Go quickly",
+            "Bachelor's degree in CS/Software Engineering or equivalent demonstrated ability (entry-level friendly: 6 months\u20131 year experience acceptable)",
+            "Solid CS fundamentals: data structures, algorithms, concurrency, networking, HTTP, databases",
+            "Proficiency in at least one systems/backend language (Go, Java, C++, Rust, C#, or Python) with ability to quickly become productive in Go",
             "Working knowledge of SQL and relational data modeling",
-            "Evidence of self-driven building (internships, personal projects, OSS contributions, hackathons)",
-            "Authorization to work in the United States required"
+            "Comfort with Git, command line, and Linux; bonus for AI/ML infra, GPU computing, distributed systems interest or open-source contributions"
           ],
-          "company_summary": "Mirantis is a Kubernetes-native AI infrastructure company (founded 1999, HQ Campbell, CA) that provides cloud-native and AI infrastructure orchestration software, including its k0rdent AI platform, serving 1,500+ enterprise customers across 90 countries. In 2026 Mirantis was acquired by IREN (NASDAQ: IREN), a bare-metal GPU/AI cloud provider, in a ~$625M all-stock deal to combine Mirantis's software/orchestration expertise with IREN's GPU infrastructure at scale.",
+          "company_summary": "Mirantis is a 27-year-old (founded 1999) open-source cloud infrastructure company headquartered in Campbell, CA, known for Kubernetes and OpenStack-based products (Mirantis Kubernetes Engine, k0rdent AI) serving 1,500+ enterprise customers. In 2026, Mirantis was acquired by IREN (NASDAQ: IREN), a neocloud/AI infrastructure provider, in a ~$625M all-stock deal to build a full-stack, vertically integrated AI cloud combining IREN's GPU/bare-metal infrastructure with Mirantis's Kubernetes orchestration and enterprise software layer.",
           "culture_signals": [
-            "Emphasizes mentorship for new grads \u2014 code reviewed by senior engineers across US, Europe, and India",
-            "Encourages learning-by-doing: 'we do not expect you to arrive knowing our stack'",
-            "Values self-driven builders, curiosity, and rigorous code review/feedback culture",
-            "Long open-source heritage (OpenStack, Kubernetes, k0s, k0rdent) suggests engineering-driven, community-oriented culture",
-            "Recently recognized as a Leader/Challenger in industry analyst reports (Forrester, Gartner, Omdia) \u2014 signals technical credibility",
-            "Company is mid-acquisition/integration (by IREN) \u2014 culture and priorities may be in flux during transition"
+            "Positive: Strong open-source heritage and contributor culture (OpenStack, Kubernetes, k0s, k0rdent) \u2014 good for engineers who value OSS work",
+            "Positive: Emphasis on mentorship-style growth (code review, documentation, tackling unfamiliar problems) suggests supportive environment for junior engineers",
+            "Positive: Recently earned CNCF Kubernetes AI Conformance certification, indicating technical credibility and forward momentum in AI infra space",
+            "Neutral/Uncertain: Company recently underwent acquisition by IREN (closed Aug 2026), which can bring both growth opportunity and integration/restructuring uncertainty"
           ],
           "talking_points": [
-            "Highlight any personal/open-source projects involving Go, distributed systems, or Kubernetes \u2014 the role explicitly wants a project you can walk through in depth",
-            "Emphasize CS fundamentals (data structures, algorithms, concurrency, networking) since the role is fundamentals-heavy for a new grad",
-            "Show curiosity about AI infrastructure / GPU orchestration and mention interest in k0rdent, Kubernetes-native platforms, or CNCF ecosystem",
-            "Demonstrate a 'figure it out' mindset \u2014 mention examples of debugging unfamiliar systems or reading source code independently",
-            "Reference Mirantis's recent momentum (IREN acquisition, k0rdent CNCF conformance, Gartner/Forrester recognition) to show you've researched the company's current AI infrastructure pivot"
+            "Highlight any Go experience or willingness to quickly ramp up in Go, since the team explicitly welcomes candidates from other backend languages (Java, C++, Rust, C#, Python)",
+            "Emphasize CS fundamentals (concurrency, networking, data structures) and any coursework or projects involving distributed systems or databases",
+            "Mention interest in AI/ML infrastructure or GPU computing, directly relevant given Mirantis's pivot to AI infrastructure (k0rdent AI) post-IREN acquisition",
+            "Reference any open-source contributions (even small ones) as this aligns strongly with Mirantis's open-source-driven culture",
+            "Show awareness of the IREN acquisition and Mirantis's strategic shift toward being the 'software layer' of a vertically integrated AI cloud \u2014 demonstrates you've done homework on where the company is headed"
           ],
           "red_flags": [
-            "RemoteOK listing implies 'Probably worldwide' remote, but actual job req explicitly requires US work authorization \u2014 location mismatch/ambiguity",
-            "Company recently acquired by IREN (2026) \u2014 potential for organizational restructuring, role changes, or culture shifts during integration",
-            "New-grad-level compensation/scope not disclosed (RemoteOK hides salary behind premium paywall)"
+            "Job posting on RemoteOK was thin on detail; full requirements had to be cross-referenced from other job boards (golangprojects, SmartRecruiters, LinkedIn) \u2014 some inconsistency in seniority level across similarly titled postings (entry-level 'Software Engineer' vs. 'Senior Software Engineer' requiring 7+ years)",
+            "Company recently went through an acquisition (closed Aug 2026), which can introduce organizational change, shifting priorities, or integration-related disruption"
           ],
           "sources": [
             "https://remoteOK.com/remote-jobs/remote-software-engineer-mirantis-1137387",
-            "https://jobs.smartrecruiters.com/Mirantis/744000149065869-software-engineer",
+            "https://www.golangprojects.com/golang-go-job-gkn-Remote-Software-Engineer-Raleigh-Mirantis-remotework.html",
+            "https://jobs.smartrecruiters.com/Mirantis/744000146207309-software-engineer-infrastructure-go-remote-in-the-us",
+            "https://www.ziprecruiter.com/c/Mirantis/Job/Senior-Software-Engineer-(Golang)-remote-in-the-US/-in-Remote,US?jid=05a81a04c8ac6592",
             "https://en.wikipedia.org/wiki/Mirantis",
-            "https://irisenergy.gcs-web.com/news-releases/news-release-details/iren-announces-acquisition-mirantis-strengthen-ai-cloud-delivery",
             "https://futurumgroup.com/insights/can-iren-build-a-full-stack-ai-cloud-the-mirantis-acquisition-makes-the-case",
-            "https://www.mirantis.com/company/press-center",
-            "https://www.mirantis.com/blog/forrester-research-recognizes-mirantis-charting-a-new-course-as-an-ai-centric-neopaas-provider"
+            "https://irisenergy.gcs-web.com/news-releases/news-release-details/iren-announces-acquisition-mirantis-strengthen-ai-cloud-delivery",
+            "https://www.mirantis.com/blog/a-new-chapter-for-mirantis",
+            "https://www.mirantis.com/careers"
           ]
         }
       },
@@ -187,56 +186,55 @@
           "within_iteration_budget": true,
           "latency_ok": true
         },
-        "steps": 13,
-        "tool_call_count": 6,
-        "elapsed_seconds": 42.4,
+        "steps": 7,
+        "tool_call_count": 3,
+        "iteration_count": 3,
+        "elapsed_seconds": 21.6,
         "error_message": null,
         "brief": {
-          "role": "HR Operations Specialist (Remote, Independent Contractor)",
+          "role": "HR Operations Specialist",
           "company": "Law Offices of Sabrina Li, P.C.",
-          "location": "Remote | South Africa",
+          "location": "Remote (South Africa)",
           "tech_stack": [
             "Rippling (HRIS)",
-            "monday.com",
-            "AI/automation tools for HR workflows",
-            "general HR/recruiting software"
+            "AI/automation tools for HR processes",
+            "General HR/ATS systems"
           ],
           "key_requirements": [
-            "Bachelor's degree in Psychology, HR, Business Administration, Management, or related field",
-            "Minimum 2 years of HR operations experience at a U.S.-based company (onboarding, compliance, employee lifecycle)",
-            "Experience with monday.com and HRIS platforms such as Rippling",
-            "Tech-savvy and comfortable using AI tools for documentation/process efficiency",
-            "Excellent written/spoken English and proactive, self-directed communication in a fully remote environment"
+            "Tech-savvy and proactive HR professional with strong communication skills",
+            "Experience supporting onboarding, compliance audits, and documentation tracking",
+            "Recruitment/sourcing support including candidate outreach and headhunting for hard-to-fill roles",
+            "Ability to maintain accurate HR records and assist with training curriculum/SOP development",
+            "Comfort using AI and automation to improve HR processes; independent contractor role requiring self-direction"
           ],
-          "company_summary": "The Law Offices of Sabrina Li, P.C. is a boutique/full-service U.S. immigration law firm founded in 2012, with offices in Los Angeles, Pasadena, Santa Ana, and Dallas, plus international operations across Asia, Africa, and Latin America. The firm handles employment-based, family-based, and investment immigration cases and was named a 2025 Inc. Best Workplaces honoree.",
+          "company_summary": "The Law Offices of Sabrina Li, P.C. is a boutique, full-service U.S. immigration law firm founded in 2012, with offices in Los Angeles (Pasadena), Santa Ana, and Dallas, plus international operations across Asia, Africa, and Central/South America. The firm handles family- and employment-based immigration, waivers, removal defense, and more, and was named a 2025 Inc. Best Workplaces honoree.",
           "culture_signals": [
-            "Positive: Named a 2025 Inc. Best Workplaces honoree, emphasizing professional development and career pathways",
-            "Positive: Recognized by JPMorgan Chase as a 'Community Icon' for immigrant community support",
-            "Positive: Job listing mentions structured onboarding, Pacific Time-aligned flexible hours, birthday recognitions, team appreciation",
-            "Mixed/Negative: Role is an independent contractor position (not salaried employee), which may mean fewer benefits/job security",
-            "Negative: At least one Yelp review raises serious complaints about document handling quality, though this is a single/anecdotal review"
+            "Recognized as a 2025 Inc. Best Workplaces honoree, indicating investment in employee engagement and culture",
+            "Emphasizes professional development, clear career pathways, and accountability",
+            "Mentions structured onboarding, team appreciation initiatives (e.g., birthday recognitions)",
+            "Growing firm with recent expansion into Dallas and international operations, suggesting growth opportunities",
+            "Role is an Independent Contractor position, not a traditional employee role, which may affect benefits/stability"
           ],
           "talking_points": [
-            "Highlight direct experience with Rippling and monday.com, since both are explicitly required tools",
-            "Emphasize U.S.-based HR operations experience (onboarding, compliance, employee lifecycle) to meet the 2-year minimum requirement",
-            "Show comfort with AI-driven process automation, since the firm explicitly wants someone to modernize HR workflows using AI",
-            "Reference the firm's recent growth (Dallas office expansion, 2025 Inc. Best Workplaces recognition) to show genuine interest in the company's trajectory",
-            "Demonstrate strong documentation/SOP creation skills, as the role involves building training curricula and process maps"
+            "Highlight experience with HRIS platforms (especially Rippling) and using automation/AI to streamline HR workflows",
+            "Discuss experience managing full-cycle recruitment including sourcing for hard-to-fill or niche roles",
+            "Emphasize compliance and audit experience, particularly tracking certifications, documentation, and policy acknowledgements",
+            "Show adaptability and comfort working remotely/asynchronously across international time zones given the firm's global operations",
+            "Reference the firm's recent Inc. Best Workplaces recognition and express alignment with its culture of accountability and continuous improvement"
           ],
           "red_flags": [
-            "Role is structured as an independent contractor position rather than a full employee, which may affect benefits, job security, and local labor protections",
-            "One negative Yelp review alleges quality issues with immigration document filings \u2014 worth further due diligence on client satisfaction",
-            "Job posting mentions the firm is hiring the same near-identical role across multiple countries/regions (Philippines, South Africa) which could indicate a broad, possibly high-turnover contractor search rather than a single localized hire"
+            "Role is structured as an Independent Contractor position rather than a full employee role, which may mean no traditional benefits (health insurance, PTO, etc.) despite site tags",
+            "Salary not disclosed (hidden behind 'Upgrade to Premium' on RemoteOK)",
+            "Job description was truncated on the source page; full details on compensation, hours, and specific tools were not fully visible"
           ],
           "sources": [
-            "https://remoteok.com/remote-jobs/remote-hr-operations-specialist-law-offices-of-sabrina-li-1137386",
-            "https://dynamitejobs.com/company/lawofficesofsabrinali/remote-job/hr-operations-specialist",
-            "https://jobs.workable.com/view/uHMabhDeSKBDStHeuoRNUu/remote-hr-operations-specialist-in-philippines-at-law-offices-of-sabrina-li",
+            "https://remoteOK.com/remote-jobs/remote-hr-operations-specialist-law-offices-of-sabrina-li-1137386",
+            "https://www.linkedin.com/company/law-offices-of-sabrina-li-p-c",
             "https://www.sabrinali.law",
+            "https://www.sabrinali.law/our-firm",
             "https://www.sabrinali.law/post/2025-year-in-review",
             "https://www.inc.com/profile/law-offices-of-sabrina-li",
-            "https://www.linkedin.com/company/law-offices-of-sabrina-li-p-c",
-            "https://www.yelp.com/biz/law-offices-of-sabrina-li-pasadena"
+            "https://joinrise.co/law-offices-of-sabrina-li/hr-operations-specialist-egn5"
           ]
         }
       },
@@ -256,50 +254,54 @@
         },
         "steps": 7,
         "tool_call_count": 3,
-        "elapsed_seconds": 20.8,
+        "iteration_count": 3,
+        "elapsed_seconds": 26.5,
         "error_message": null,
         "brief": {
           "role": "Marketing Student Assistant",
           "company": "Copenhagen Optimization",
-          "location": "Copenhagen, Denmark (likely on-site/hybrid, listed as remote/worldwide on RemoteOK)",
+          "location": "Remote (probably worldwide, though role references working alongside Copenhagen-based Brand & Marketing team)",
           "tech_stack": [
             "HubSpot",
             "Notion",
             "Canva",
-            "Figma"
+            "Figma (or similar design tools)"
           ],
           "key_requirements": [
-            "Currently studying marketing, communications, business or related field (ideally 1-2 years remaining)",
+            "Currently studying marketing, communications, business or a related field, with at least 1-2 years of studies remaining",
             "Confident written and spoken English communication",
-            "Structured, detail-oriented, able to manage tasks and deadlines",
-            "Comfortable with digital tools (HubSpot, Notion, Canva/Figma a plus)",
-            "Proactive, takes initiative, curious to learn practical marketing"
+            "Structured, organized, detail-oriented, and able to manage multiple deadlines/tasks",
+            "Comfortable using digital tools (HubSpot, Notion) and ideally some experience with Canva/Figma",
+            "Proactive, takes initiative, comfortable working with minimal hand-holding as a student/part-time role"
           ],
-          "company_summary": "Copenhagen Optimization is a Denmark-based SaaS company founded in 2014 that provides 'Better Airport,' a cloud-based platform helping airport operators optimize check-in, baggage, security, stand & gate, and immigration operations. It serves 40+ airports globally (including Heathrow, JFK, Dallas Fort Worth, Sydney, and Brisbane) and in January 2025 sold a majority stake to French investment firm InfraVia Capital Partners to accelerate growth.",
+          "company_summary": "Copenhagen Optimization is a Copenhagen, Denmark-based SaaS company (founded 2014) providing cloud-based optimization and forecasting solutions for airport operations, including resource management, stand & gate allocation, and passenger flow. The company has ~55 employees, grew revenue to roughly $3.2M in 2024, and was acquired by French private equity firm InfraVia Capital Partners in a majority stake deal in January 2025 to accelerate global growth.",
           "culture_signals": [
-            "Structured mentorship: role works directly alongside Head of Marketing, Growth Marketing Manager, and Content Strategist",
-            "Emphasis on hands-on learning and room to grow responsibility over time \u2014 supportive of students/early-career talent",
-            "Fast-growing, international company (40+ airports across US, Europe, Australia, Caribbean) suggesting dynamic, global work exposure",
-            "Recently backed by institutional investor (InfraVia), signaling stability and growth investment rather than early-stage volatility"
+            "Small, growing team offering hands-on experience and mentorship (works directly with Head of Marketing, Growth Marketing Manager, and Content Strategist)",
+            "Recent PE investment (InfraVia, Jan 2025) suggests growth-stage scaling and increased resources/ambition",
+            "Global client base (JFK, Dallas Fort Worth, Brisbane, Barbados airports) indicates international scope even for a small team",
+            "Emphasis on structure, ownership, and room to grow responsibilities \u2014 good for a student role seeking real experience"
           ],
           "talking_points": [
-            "Highlight interest in B2B SaaS marketing and eagerness to learn campaign execution end-to-end (content, events, digital)",
-            "Emphasize organizational and project-coordination skills relevant to managing calendars, event logistics, and campaign assets",
-            "Mention familiarity or willingness to learn HubSpot, Notion, Canva/Figma as tools used daily in the role",
-            "Note genuine interest in the aviation/airport optimization industry and Copenhagen Optimization's global growth (InfraVia investment, expansion to JFK, Dallas Fort Worth, Sydney, Brisbane)",
-            "Demonstrate initiative and reliability \u2014 key traits explicitly requested for this student assistant role"
+            "Highlight any coursework or experience in digital marketing, campaign coordination, or content/event support relevant to a fast-scaling B2B SaaS company",
+            "Mention familiarity or willingness to learn HubSpot and Notion, as these are core tools used daily in the role",
+            "Reference Copenhagen Optimization's recent momentum (InfraVia acquisition, new contracts with JFK, DFW, Brisbane) to show genuine interest in the company's growth trajectory",
+            "Emphasize organizational skills and reliability, since the role centers on keeping marketing operations (events, campaigns, content) running smoothly amid growth",
+            "If applicable, showcase any design tool experience (Canva/Figma) as a differentiator given it's listed as 'a plus'"
           ],
           "red_flags": [
-            "Job posted on RemoteOK as 'remote/worldwide' but role appears to require close in-person collaboration with Copenhagen-based marketing team \u2014 location/remote status may be ambiguous or misleading",
-            "Student assistant position likely part-time/limited hours and pay; salary not disclosed (hidden behind RemoteOK premium)"
+            "This is a marketing/business support role, not a software engineering position \u2014 mismatch if applicant is specifically seeking an engineering job",
+            "Job listing mentions 'Golang' and 'Developer' tags on RemoteOK, which appear to be generic site categorization rather than actual role requirements \u2014 could indicate a mislabeled or template posting",
+            "Student assistant role likely part-time/limited compensation; salary not disclosed (hidden behind RemoteOK premium paywall)"
           ],
           "sources": [
             "https://remoteOK.com/remote-jobs/remote-marketing-student-assistant-copenhagen-optimization-1137381",
-            "https://copenhagenoptimization.com/company/about-us",
-            "https://copenhagenoptimization.com/news",
-            "https://infraviacapital.com/companies/copenhaguen-optimization",
+            "https://tracxn.com/d/companies/copenhagen-optimization/__nNWS2kSdDZqrkSEjIiQcX1Sve39yJq2QJugrsnShaYM",
+            "https://pitchbook.com/profiles/company/181783-18",
             "https://getlatka.com/companies/copenhagen-optimization",
-            "https://pitchbook.com/profiles/company/181783-18"
+            "https://www.preqin.com/data/profile/asset/copenhagen-optimization-aps/716675",
+            "https://infraviacapital.com/companies/copenhaguen-optimization",
+            "https://copenhagenoptimization.com/news",
+            "https://metroairportnews.com/jfk-enhances-airport-operations-system-expanding-partnership-with-copenhagen-optimization"
           ]
         }
       }

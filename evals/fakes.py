@@ -44,7 +44,12 @@ def make_create_stub(responses: list[FakeResponse]):
         except StopIteration:
             # If the loop asks for more turns than we scripted, keep looping
             # on tool_use forever so max_iterations behavior can be exercised.
-            return responses[-1]
+            # Return a fresh object each time — orchestrator.py appends
+            # response.content straight into the shared `messages` list, and
+            # returning the same instance repeatedly would alias that list
+            # across multiple message-history entries.
+            last = responses[-1]
+            return FakeResponse(stop_reason=last.stop_reason, content=list(last.content))
 
     return _create
 

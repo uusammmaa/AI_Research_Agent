@@ -8,11 +8,13 @@ run time from RemoteOK's public API so the harness doesn't rot on stale URLs.
 import asyncio
 import json
 import time
+from unittest.mock import patch
 
 import httpx
 
 from agent import orchestrator
 from config import settings
+from evals.scoring import is_valid_research_brief
 
 
 def get_live_job_urls(n: int = 3) -> list[dict]:
@@ -29,12 +31,23 @@ def get_live_job_urls(n: int = 3) -> list[dict]:
 
 
 async def _run_one(job_url: str) -> dict:
+    """Runs the real agent, counting actual loop iterations (API calls) rather
+    than tool_call steps — a single iteration's response can contain multiple
+    tool_use blocks, so tool-call count alone overstates iterations used."""
     steps = []
+    call_count = {"n": 0}
+    original_create = orchestrator.client.messages.create
+
+    def counting_create(*args, **kwargs):
+        call_count["n"] += 1
+        return original_create(*args, **kwargs)
+
     start = time.monotonic()
-    async for line in orchestrator.run_agent(job_url):
-        steps.append(json.loads(line))
+    with patch.object(orchestrator.client.messages, "create", side_effect=counting_create):
+        async for line in orchestrator.run_agent(job_url):
+            steps.append(json.loads(line))
     elapsed = time.monotonic() - start
-    return {"steps": steps, "elapsed_seconds": round(elapsed, 1)}
+    return {"steps": steps, "elapsed_seconds": round(elapsed, 1), "iteration_count": call_count["n"]}
 
 
 def _find(steps, type_):
@@ -55,16 +68,7 @@ def score_live_run(job: dict, run: dict) -> dict:
     if complete_steps:
         try:
             brief = json.loads(complete_steps[0]["output"])
-            required = {
-                "role", "company", "location", "tech_stack", "key_requirements",
-                "company_summary", "culture_signals", "talking_points", "red_flags", "sources",
-            }
-            valid_schema = (
-                required.issubset(brief.keys())
-                and isinstance(brief["tech_stack"], list)
-                and isinstance(brief["sources"], list)
-                and bool(brief["role"]) and bool(brief["company"])
-            )
+            valid_schema = is_valid_research_brief(brief)
             sources_present = len(brief.get("sources", [])) > 0
         except Exception:
             pass
@@ -73,7 +77,7 @@ def score_live_run(job: dict, run: dict) -> dict:
     checks["sources_present"] = sources_present
     checks["first_tool_is_fetch_url"] = bool(tool_calls) and tool_calls[0]["tool"] == "fetch_url"
     checks["used_search"] = any(t["tool"] == "search_web" for t in tool_calls)
-    checks["within_iteration_budget"] = len(tool_calls) <= settings.max_iterations
+    checks["within_iteration_budget"] = run["iteration_count"] <= settings.max_iterations
     checks["latency_ok"] = run["elapsed_seconds"] <= 120
 
     error_message = error_steps[0]["message"] if error_steps else None
@@ -86,6 +90,7 @@ def score_live_run(job: dict, run: dict) -> dict:
         "checks": checks,
         "steps": len(steps),
         "tool_call_count": len(tool_calls),
+        "iteration_count": run["iteration_count"],
         "elapsed_seconds": run["elapsed_seconds"],
         "error_message": error_message,
         "brief": brief,
@@ -103,6 +108,7 @@ def run_all(n: int = 3) -> list[dict]:
             results.append({
                 "name": f"live::{job['company']}", "url": job["url"], "expected": "complete",
                 "passed": False, "checks": {"exception": str(e)}, "steps": 0,
+                "tool_call_count": 0, "iteration_count": 0,
                 "elapsed_seconds": None, "error_message": str(e), "brief": None,
             })
     return results
